@@ -301,7 +301,7 @@ img {
 
 .home__subtitle-dark {
   font-size: 16px;
-  color: #7f7f7f;
+  color: #a3a3a3;
   margin-top: 20px;
 }
 
@@ -490,7 +490,7 @@ filter: FlipV;
 }
 
 .about__description {
-  color: #808285;
+  color: #a3a3a3;
   margin-top: 20px;
   margin-bottom: var(--mb-3);
 }
