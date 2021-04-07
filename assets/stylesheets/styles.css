@@ -157,9 +157,11 @@ img {
 }
 
 .logo-img {
-  max-width: 115.95px;
-  max-height: 115.95px;
+  max-width: 100%;
+  max-height: 91.5px;
+
 }
+
 
 /* ========== NAV ========== */
 
@@ -589,6 +591,7 @@ filter: FlipV;
   font-size: 1.5rem;
   color: var(--text-color);
   margin-right: var(--mb-2);
+  margin-left: 10px;
 }
 
 .footer__title {
@@ -615,7 +618,9 @@ filter: FlipV;
 }
 
 .footer-logo {
-  max-width: 40%;
+  max-width: 200px;
+  margin-bottom: -10px;
+  margin-top: -23px;
 }
 
 /*========== MEDIA QUERIES ==========*/
@@ -713,6 +718,12 @@ filter: FlipV;
 
   .section {
     padding-top: 8rem;
+  }
+
+  .logo-img {
+    max-width: 100%;
+    max-height: 91.5px;
+    margin-left: -50px;
   }
 
   .section-underTitle {
