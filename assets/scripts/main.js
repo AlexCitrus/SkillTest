@@ -74,7 +74,7 @@ const sr = ScrollReveal({
 
 const slideFromLeft = ScrollReveal({
   origin: "left",
-  distance: "300px",
+  distance: "200px",
   duration: 2000,
   reset: false,
 });
@@ -92,7 +92,7 @@ slideFromLeftSlow.reveal('.about-title')
 
 const slideFromBottom = ScrollReveal({
   origin: "bottom",
-  distance: "300px",
+  distance: "200px",
   duration: 2000,
   reset: false,
 });
