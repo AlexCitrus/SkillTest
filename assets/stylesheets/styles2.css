@@ -1,0 +1,384 @@
+html {
+  background-color: #2c2f34;
+  font-family: "Muli", sans-serif;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+}
+
+:root {
+  --header-height: 3rem;
+
+  /* ========== COLORS ========== */
+
+  --first-color: #93c33c;
+  --first-color-alt: #048654;
+  --title-color: #393939;
+  --text-color: #d4d4d4;
+  --text-color-light: #a6a6a6;
+  --body-color: #2c2f34;
+  --container-color: #ffffff;
+
+  /* ========== FONT ========== */
+
+  --body-font: "Muli", sans-serif;
+
+  --biggest-font-size: 4em;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /* ========== FONT-WEIGHT ========== */
+
+  --font-medium: 500;
+  --font-semi-bold: 800;
+
+  /* ========== Margin ========== */
+
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+
+  /* ========== Z-INDEX ========== */
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --biggest-font-size: 3em;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/* ========== BASE ========== */
+
+::selection {
+  color: black;
+  background: #6fa713;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  letter-spacing: 0.09em;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.section {
+  padding: 4rem 0 5rem;
+}
+
+.section-title,
+.section-subtitle {
+  text-align: center;
+}
+
+.section-title-white {
+  text-align: center;
+  font-size: 52px;
+  color: #d4d4d4;
+  font-weight: 100;
+}
+
+.section-title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  margin-bottom: var(--mb-3);
+}
+
+.section-subtitle {
+  display: block;
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: var(--mb-1);
+}
+
+.industry {
+  background-color: #2c2f34;
+  border: 1px solid rgb(221, 221, 221);
+  color: white;
+  transition: 0.2s;
+}
+
+.next{
+  background-color: #93c33c;
+  border: 1px solid #93c33c;
+  color: black;
+  transition: 0.2s;
+  font-weight: bolder;
+}
+
+.notification {
+  transition: 0.2s;
+  font-weight: bolder;
+  color: black;
+}
+
+
+.notification:hover {
+  background-color: #93c33c;
+  color: white;
+  cursor: pointer;
+  border: 1px solid #93c33c;
+}
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #ffffff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: rgb(110, 146, 43);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid white;
+}
+
+.logo-img {
+  max-width: 100%;
+  max-height: 81.5px;
+  margin-left: -30px;
+}
+
+.container {
+  max-width: 80%;
+}
+
+:root {
+  --header-height: 3rem;
+
+  /* ========== COLORS ========== */
+
+  --first-color: #93c33c;
+  --first-color-alt: #048654;
+  --title-color: #393939;
+  --text-color: #d4d4d4;
+  --text-color-light: #a6a6a6;
+  --body-color: #2c2f34;
+  --container-color: #ffffff;
+
+  /* ========== FONT ========== */
+
+  --body-font: "Muli", sans-serif;
+
+  --biggest-font-size: 4em;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /* ========== FONT-WEIGHT ========== */
+
+  --font-medium: 500;
+  --font-semi-bold: 800;
+
+  /* ========== Margin ========== */
+
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+
+  /* ========== Z-INDEX ========== */
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --biggest-font-size: 3em;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/* ========== BASE ========== */
+
+::selection {
+  color: black;
+  background: #6fa713;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  letter-spacing: 0.09em;
+}
+
+a {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.navlink {
+  color: #d4d4d4;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.back{
+    padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+}
+
+.navlink:hover {
+  cursor: pointer;
+  color: #93c33c;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.navbar {
+  background-color: #2c2f34;
+}
+
+.navitems {
+  color: #d4d4d4;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navitems:hover {
+  cursor: pointer;
+  color: #93c33c;
+}
+
+.btn-right {
+  background-color: #93c33c;
+  font-family: "Raleway", sans-serif;
+  display: inline-block;
+  font-weight: bolder;
+
+  color: black;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.btn-right:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #93c33c;
+}
+
+.btn-right-2 {
+    background-color: #93c33c;
+    font-family: "Raleway", sans-serif;
+    display: inline-block;
+    font-weight: bolder;
+    color: black;
+    padding: 1rem 1rem;
+    border-radius: 3px;
+    transition: 0.3s;
+  }
+  
+  .btn-right-2:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #93c33c;
+  }

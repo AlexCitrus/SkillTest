@@ -47,30 +47,30 @@ window.addEventListener("scroll", scrollActive);
 // CHANGE BG HEADER
 
 const scrollHeader = () => {
-    const nav = document.getElementById("header");
-  
-    if (this.scrollY >= 200) nav.classList.add("scroll-header");
-    else nav.classList.remove("scroll-header");
-  };
-  
-  window.addEventListener("scroll", scrollHeader);
-  
-  const scrollTop = () => {
-    const scrollTop = document.getElementById("scroll-top");
-  
-    if (this.scrollY >= 560) scrollTop.classList.add("scroll-top");
-    else scrollTop.classList.remove("scroll-top");
-  };
+  const nav = document.getElementById("header");
 
-  window.addEventListener("scroll", scrollTop);
+  if (this.scrollY >= 200) nav.classList.add("scroll-header");
+  else nav.classList.remove("scroll-header");
+};
 
-  /*==================== SCROLL REVEAL ANIMATION ====================*/
+window.addEventListener("scroll", scrollHeader);
+
+const scrollTop = () => {
+  const scrollTop = document.getElementById("scroll-top");
+
+  if (this.scrollY >= 560) scrollTop.classList.add("scroll-top");
+  else scrollTop.classList.remove("scroll-top");
+};
+
+window.addEventListener("scroll", scrollTop);
+
+/*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
-    origin: "top",
-    distance: "30px",
-    duration: 2000,
-    reset: true,
-  });
+  origin: "top",
+  distance: "30px",
+  duration: 2000,
+  reset: true,
+});
 
 const slideFromLeft = ScrollReveal({
   origin: "left",
@@ -108,56 +108,56 @@ const slideFromBottomSlow = ScrollReveal({
   reset: false,
 });
 
-slideFromBottomSlow.reveal('.button_more, .button_calc' )
-  
-  // sr.reveal(
-  //   `.home__data, .home__img,
-  //             .about__data, .about__img,
-  //             .services__content, .menu__content,
-  //             .app__data, .app__img,
-  //             .contact__data, .contact__button,
-  //             .footer__content`,
-  //   {
-  //     interval: 200,
-  //   }
-  // );
+slideFromBottomSlow.reveal('.button_more, .button_calc')
 
-  // PROGRESS BAR
+// sr.reveal(
+//   `.home__data, .home__img,
+//             .about__data, .about__img,
+//             .services__content, .menu__content,
+//             .app__data, .app__img,
+//             .contact__data, .contact__button,
+//             .footer__content`,
+//   {
+//     interval: 200,
+//   }
+// );
 
-  function scrollProgressBar() {
-    var getMax = function () {
-      return $(document).height() - $(window).height();
-    };
-  
-    var getValue = function () {
-      return $(window).scrollTop();
-    };
-  
-    var progressBar = $(".progress-bar"),
-      max = getMax(),
-      value,
-      width;
-  
-    var getWidth = function () {
-      // Calculate width in percentage
-      value = getValue();
-      width = (value / max) * 100;
-      width = width + "%";
-      return width;
-    };
-  
-    var setWidth = function () {
-      progressBar.css({ width: getWidth() });
-    };
-  
-    $(document).on("scroll", setWidth);
-    $(window).on("resize", function () {
-      // Need to reset max
-      max = getMax();
-      setWidth();
-    });
-  }
+// PROGRESS BAR
 
-  
-  
-    scrollProgressBar();
+function scrollProgressBar() {
+  var getMax = function () {
+    return $(document).height() - $(window).height();
+  };
+
+  var getValue = function () {
+    return $(window).scrollTop();
+  };
+
+  var progressBar = $(".progress-bar"),
+    max = getMax(),
+    value,
+    width;
+
+  var getWidth = function () {
+    // Calculate width in percentage
+    value = getValue();
+    width = (value / max) * 100;
+    width = width + "%";
+    return width;
+  };
+
+  var setWidth = function () {
+    progressBar.css({ width: getWidth() });
+  };
+
+  $(document).on("scroll", setWidth);
+  $(window).on("resize", function () {
+    // Need to reset max
+    max = getMax();
+    setWidth();
+  });
+}
+
+
+
+scrollProgressBar();
