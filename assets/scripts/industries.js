@@ -147,7 +147,7 @@ let orders
 let averageVal
 let visitors
 let CPM
-let CPMax
+let CPMMax
 let CPC
 let CPCMax
 let CTR
@@ -337,6 +337,57 @@ const generateHTML4 = () => {
     </div>
   </div>
     <div class="columns mt-5 mb-5">
+            <div class="column is-half">
+            <table class="table is-bordered is-narrow is-hoverable is-fullwidth">
+      <thead>
+        <tr>
+          <th class="has-text-white is-size-4">Industry Benchmarks</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cost per Thousand Impressions (CPM)</td>
+          <td>$${CPM} - $${CPMMax}</td>
+        </tr>
+        <tr>
+          <td>Cost per Click (CPC)</td>
+          <td>$${CPC} - $${CPCMax}</td>
+        </tr>
+        <tr>
+          <td>Click Thru Rate (CTR)</td>
+          <td>${CTR}% - ${CTRMax}%</td>
+        </tr>
+      </tbody>
+    </table>
+            </div>
+
+            <div class="column is-half">
+            <table class="table is-bordered is-narrow is-hoverable is-fullwidth">
+      <thead>
+        <tr>
+          <th class="has-text-white is-size-4">Industry Benchmarks</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cost per Thousand Impressions (CPM)</td>
+          <td>$${CPM2} - $${CPM2Max}</td>
+        </tr>
+        <tr>
+          <td>Cost per Click (CPC)</td>
+          <td>$${CPC2} - $${CPC2Max}</td>
+        </tr>
+        <tr>
+          <td>Cost per New Visitor</td>
+          <td>$${CNV} - $${CNVMax}</td>
+        </tr>
+      </tbody>
+    </table>
+            </div>
+            </div>
+            <div class="columns mt-5 mb-5>
             <div class="column is-3" onclick="back()">
             <span class="mr-5 btn-right-2 mt-3">
             <a href="#" class="back has-text-white" onclick="back()"
