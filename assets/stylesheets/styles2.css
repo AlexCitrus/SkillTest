@@ -1,3 +1,5 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
+
 html {
   background-color: #2c2f34;
   font-family: "Muli", sans-serif;
