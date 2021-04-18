@@ -142,23 +142,39 @@ const styleFashion = industries[10]
 const techComputing = industries[11]
 const travel = industries[12]
 const other = industries[13]
-
+let globalIndustry
+let orders
+let averageVal
+let visitors
+let CPM
+let CPMax
+let CPC
+let CPCMax
+let CTR
+let CTRMax
+let CPM2
+let CPM2Max
+let CPC2
+let CPC2Max
+let CNV
+let CNVMax
 
 const logger = (industry) => {
 
+    globalIndustry = industry.industry
 
-    let CPM = industry.benchmarks.CPM
-    let CPMMax = industry.benchmarks.CPMMax
-    let CPC = industry.benchmarks.CPC
-    let CPCMax = industry.benchmarks.CPCMax
-    let CTR = industry.benchmarks.CTR
-    let CTRMax = industry.benchmarks.CTRMax
-    let CPM2 = industry.benchmarks.CPM2
-    let CPM2Max = industry.benchmarks.CPM2Max
-    let CPC2 = industry.benchmarks.CPC2
-    let CPC2Max = industry.benchmarks.CPC2Max
-    let CNV = industry.benchmarks.CNV
-    let CNVMax = industry.benchmarks.CNVMax
+    CPM = industry.benchmarks.CPM
+    CPMMax = industry.benchmarks.CPMMax
+    CPC = industry.benchmarks.CPC
+    CPCMax = industry.benchmarks.CPCMax
+    CTR = industry.benchmarks.CTR
+    CTRMax = industry.benchmarks.CTRMax
+    CPM2 = industry.benchmarks.CPM2
+    CPM2Max = industry.benchmarks.CPM2Max
+    CPC2 = industry.benchmarks.CPC2
+    CPC2Max = industry.benchmarks.CPC2Max
+    CNV = industry.benchmarks.CNV
+    CNVMax = industry.benchmarks.CNVMax
 
     console.log(`Industry: ${industry.industry}`)
     console.log("----------------------------------------------------")
@@ -170,5 +186,389 @@ const logger = (industry) => {
     console.log(`Cost per Click: ${CPC2}% - ${CPC2Max}%`)
     console.log(`Cost per New Visitor: ${CNV}% - ${CNVMax}%`)
     console.log("----------------------------------------------------")
+
+}
+
+const generateHTML = () => {
+
+    const previous = document.querySelector(".generated")
+
+    previous.innerHTML = `<div class="columns">
+    <div class="column is-full mt-3 ml-3">
+      <div
+        class="is-justify-content-space-between is-align-items-center is-flex-direction-row"
+      >
+        <span class="is-size-2 has-text-weight-bold">Calculating Ad Budget</span>
+
+        <div>
+            <progress class="progress is-success mt-3 mb-3 is-medium" value="2" max="5">50%</progress>
+        </div>
+        <span class="mr-5 btn-right-2 mt-3">
+          <a href="#" class="back has-text-white" onclick="back()"
+            > <i class="fas fa-arrow-left"></i> Back</a
+          >
+        </span>
+      </div>
+    </div>
+  </div>
+    <div class="is-size-4 has-text-centered has-text-grey-light mb-4 has-text-weight-bold ">How many orders* does your website get per month?
+    </div>
+    <div class="columns is-centered mt-3">
+      <div class="column is-3">
+        <div class="control">
+            <input class="input is-hovered is-half" type="number" placeholder="0">
+        </div>
+      </div>
+      
+    </div>
+    <div class="columns mt-5 mb-5">
+            <div class="column is-2" onclick="generateHTML2()">
+              <p class="notification next has-text-centered">Next <i class="fas fa-arrow-right"></i></p>
+            </div>
+          </div>`
+
+
+}
+
+const generateHTML2 = () => {
+
+    const previous = document.querySelector(".generated")
+    document.querySelector(".input").defaultValue = 0
+    orders = document.querySelector(".input").value
+
+    console.log(`Orders: ${orders}`)
+
+    previous.innerHTML = `<div class="columns">
+    <div class="column is-full mt-3 ml-3">
+      <div
+        class="is-justify-content-space-between is-align-items-center is-flex-direction-row"
+      >
+        <span class="is-size-2 has-text-weight-bold">Calculating Ad Budget</span>
+
+        <div>
+            <progress class="progress is-success mt-3 mb-3 is-medium" value="3" max="5">50%</progress>
+        </div>
+        <span class="mr-5 btn-right-2 mt-3">
+          <a href="#" class="back has-text-white" onclick="back2()"
+            > <i class="fas fa-arrow-left"></i> Back</a
+          >
+        </span>
+      </div>
+    </div>
+  </div>
+    <div class="is-size-4 has-text-centered has-text-grey-light mb-4 has-text-weight-bold ">What is the average value of an order?
+    </div>
+    <div class="columns is-centered mt-3">
+      <div class="column is-3">
+        <div class="control">
+            <input class="input is-hovered is-half" type="number" placeholder="0">
+        </div>
+      </div>
+      
+    </div>
+    <div class="columns mt-5 mb-5">
+            <div class="column is-2" onclick="generateHTML3()">
+              <p class="notification next has-text-centered">Next <i class="fas fa-arrow-right"></i></p>
+            </div>
+          </div>`
+
+}
+
+const generateHTML3 = () => {
+    const previous = document.querySelector(".generated")
+    document.querySelector(".input").defaultValue = 0
+    averageVal = document.querySelector(".input").value
+    console.log(`Average Value: ${averageVal}`)
+
+    previous.innerHTML = `<div class="columns">
+    <div class="column is-full mt-3 ml-3">
+      <div
+        class="is-justify-content-space-between is-align-items-center is-flex-direction-row"
+      >
+        <span class="is-size-2 has-text-weight-bold">Calculating Ad Budget</span>
+
+        <div>
+            <progress class="progress is-success mt-3 mb-3 is-medium" value="4" max="5">50%</progress>
+        </div>
+        <span class="mr-5 btn-right-2 mt-3">
+          <a href="#" class="back has-text-white" onclick="back3()"
+            > <i class="fas fa-arrow-left"></i> Back</a
+          >
+        </span>
+      </div>
+    </div>
+  </div>
+    <div class="is-size-4 has-text-centered has-text-grey-light mb-4 has-text-weight-bold ">How many website visitors do you have a month?
+    </div>
+    <div class="columns is-centered mt-3">
+      <div class="column is-3">
+        <div class="control">
+            <input class="input is-hovered is-half" type="number" placeholder="0">
+        </div>
+      </div>
+      
+    </div>
+    <div class="columns mt-5 mb-5">
+            <div class="column is-2" onclick="generateHTML4()">
+              <p class="notification next has-text-centered">Calculate <i class="fas fa-arrow-right"></i></p>
+            </div>
+          </div>`
+}
+
+const generateHTML4 = () => {
+    const previous = document.querySelector(".generated")
+    document.querySelector(".input").defaultValue = 0
+    visitors = document.querySelector(".input").value
+    console.log(`Visitors: ${visitors}`)
+
+    previous.innerHTML = `<div class="columns">
+    <div class="column is-full mt-3 ml-3">
+      <div
+        class=" has-text-centered is-justify-content-space-between is-align-items-center is-flex-direction-row"
+      >
+        <span class="is-size-4 has-text-weight-bold mt-4">Based on estimated figures from <span class="has-text-weight-bolder spancolor">${globalIndustry}</span> companies, we recommend:</span>
+
+        <div>
+            <div class="columns is-centered mt-3">
+                <div class="column is-3"><span class="is-size-1 has-text-weight-bolder"> <span class="has-text-weight-bolder spancolor">$</span>50 </span> </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="columns mt-5 mb-5">
+            <div class="column is-3" onclick="back()">
+            <span class="mr-5 btn-right-2 mt-3">
+            <a href="#" class="back has-text-white" onclick="back()"
+              > <i class="fas fa-arrow-left"></i> Back</a
+            >
+          </span>
+            </div>
+          </div>`
+}
+
+const back = () => {
+    const previous = document.querySelector(".generated")
+
+    previous.innerHTML = `<div class="columns">
+    <div class="column is-full mt-3 ml-3">
+      <div
+        class="is-justify-content-space-between is-align-items-center is-flex-direction-row"
+      >
+        <span class="is-size-2 has-text-weight-bold">Calculating Ad Budget</span>
+
+        <div>
+            <progress class="progress is-success mt-3 mb-3 is-medium" value="1" max="5">50%</progress>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+      
+      <div class="is-size-4 has-text-centered has-text-grey-light has-text-weight-bold ">What is your industry?</div>
+      <div class="columns mt-5">
+        <div class="column">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-1" onclick="logger(artsEnt)" />
+              Arts & Entertainment
+            </p></label
+          >
+        </div>
+        <div class="column">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(autoSports)"/>
+              Automotive & Sports
+            </p></label
+          >
+        </div>
+        <div class="column">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(businessCar)"/>
+              Business & <br />
+              Careers
+            </p></label
+          >
+        </div>
+        <div class="column">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(famParentingSoc)"/>
+              Family, Parenting & Society
+            </p></label
+          >
+        </div>
+      </div>
+      <div class="columns mt-5">
+        <div class="column">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-1" onclick="logger(healthFitnessFood)"/>
+              Health Fitness & Food
+            </p></label
+          >
+        </div>
+        <div class="column">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(homeGardenPetsHobbies)"/>
+              Home/Garden, Pets & Hobbies
+            </p></label
+          >
+        </div>
+        <div class="column">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(newsPoliticsLaw)"/>
+              News, Politics & Law
+            </p></label
+          >
+        </div>
+        <div class="column">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(personalFinance)"/>
+              Personal Finance
+            </p></label
+          >
+        </div>
+      </div>
+      <div class="columns mt-5">
+        <div class="column">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-1" onclick="logger(realEstate)"/>
+              Real Estate
+            </p></label
+          >
+        </div>
+        <div class="column">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(retail)"/>
+              Retail
+            </p></label
+          >
+        </div>
+        <div class="column">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(styleFashion)"/>
+              Style & Fashion
+            </p></label
+          >
+        </div>
+        <div class="column">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(techComputing)"/>
+              Tech & Computing
+            </p></label
+          >
+        </div>
+      </div>
+      <div class="columns mt-5">
+        <div class="column is-3">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-1" onclick="logger(travel)"/>
+              Travel
+            </p></label
+          >
+        </div>
+        <div class="column is-3">
+          <label
+            ><p class="notification industry has-text-centered has-text-grey-lighter">
+              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(other)"/>
+              Other
+            </p></label
+          >
+        </div>
+      </div>
+  </div>
+  <div class="columns mt-5 mb-5">
+    <div class="column is-2" onclick="generateHTML()">
+      <p class="notification next has-text-centered">Next <i class="fas fa-arrow-right"></i></p>
+    </div>
+  </div>`
+}
+
+const back2 = () => {
+    const previous = document.querySelector(".generated")
+    
+
+    previous.innerHTML = `<div class="columns">
+    <div class="column is-full mt-3 ml-3">
+      <div
+        class="is-justify-content-space-between is-align-items-center is-flex-direction-row"
+      >
+        <span class="is-size-2 has-text-weight-bold">Calculating Ad Budget</span>
+
+        <div>
+            <progress class="progress is-success mt-3 mb-3 is-medium" value="2" max="5">50%</progress>
+        </div>
+        <span class="mr-5 btn-right-2 mt-3">
+          <a href="#" class="back has-text-white" onclick="back()"
+            > <i class="fas fa-arrow-left"></i> Back</a
+          >
+        </span>
+      </div>
+    </div>
+  </div>
+    <div class="is-size-4 has-text-centered has-text-grey-light mb-4 has-text-weight-bold ">How many orders* does your website get per month?
+    </div>
+    <div class="columns is-centered mt-3">
+      <div class="column is-3">
+        <div class="control">
+            <input class="input is-hovered is-half" type="number" placeholder="0">
+        </div>
+      </div>
+      
+    </div>
+    <div class="columns mt-5 mb-5">
+            <div class="column is-2" onclick="generateHTML2()">
+              <p class="notification next has-text-centered">Next <i class="fas fa-arrow-right"></i></p>
+            </div>
+          </div>`
+}
+
+const back3 = () => {
+    const previous = document.querySelector(".generated")
+
+    previous.innerHTML = `<div class="columns">
+    <div class="column is-full mt-3 ml-3">
+      <div
+        class="is-justify-content-space-between is-align-items-center is-flex-direction-row"
+      >
+        <span class="is-size-2 has-text-weight-bold">Calculating Ad Budget</span>
+
+        <div>
+            <progress class="progress is-success mt-3 mb-3 is-medium" value="3" max="5">50%</progress>
+        </div>
+        <span class="mr-5 btn-right-2 mt-3">
+          <a href="#" class="back has-text-white" onclick="back2()"
+            > <i class="fas fa-arrow-left"></i> Back</a
+          >
+        </span>
+      </div>
+    </div>
+  </div>
+    <div class="is-size-4 has-text-centered has-text-grey-light mb-4 has-text-weight-bold ">What is the average value of an order?
+    </div>
+    <div class="columns is-centered mt-3">
+      <div class="column is-3">
+        <div class="control">
+            <input class="input is-hovered is-half" type="number" placeholder="0">
+        </div>
+      </div>
+      
+    </div>
+    <div class="columns mt-5 mb-5">
+            <div class="column is-2" onclick="generateHTML3()">
+              <p class="notification next has-text-centered">Next <i class="fas fa-arrow-right"></i></p>
+            </div>
+          </div>`
 
 }

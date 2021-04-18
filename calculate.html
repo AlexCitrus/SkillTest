@@ -78,6 +78,9 @@
 
       <!-- Calculating -->
 
+      <div class="generated">
+          <!-- generate -->
+
       <div class="columns">
         <div class="column is-full mt-3 ml-3">
           <div
@@ -86,144 +89,147 @@
             <span class="is-size-2 has-text-weight-bold">Calculating Ad Budget</span>
 
             <div>
-                <progress class="progress is-success mt-3 mb-3 is-medium" value="50" max="100">50%</progress>
+                <progress class="progress is-success mt-3 mb-3 is-medium" value="1" max="5">50%</progress>
             </div>
             <span class="mr-5 btn-right-2 mt-3">
-              <a href="#" class="back"
+              <a href="./index.html" class="back has-text-white"
                 > <i class="fas fa-arrow-left"></i> Back</a
               >
             </span>
           </div>
         </div>
       </div>
+          
+          <div class="is-size-4 has-text-centered has-text-grey-light has-text-weight-bold ">What is your industry?</div>
+          <div class="columns mt-5">
+            <div class="column">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-1" onclick="logger(artsEnt)" />
+                  Arts & Entertainment
+                </p></label
+              >
+            </div>
+            <div class="column">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(autoSports)"/>
+                  Automotive & Sports
+                </p></label
+              >
+            </div>
+            <div class="column">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(businessCar)"/>
+                  Business & <br />
+                  Careers
+                </p></label
+              >
+            </div>
+            <div class="column">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(famParentingSoc)"/>
+                  Family, Parenting & Society
+                </p></label
+              >
+            </div>
+          </div>
+          <div class="columns mt-5">
+            <div class="column">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-1" onclick="logger(healthFitnessFood)"/>
+                  Health Fitness & Food
+                </p></label
+              >
+            </div>
+            <div class="column">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(homeGardenPetsHobbies)"/>
+                  Home/Garden, Pets & Hobbies
+                </p></label
+              >
+            </div>
+            <div class="column">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(newsPoliticsLaw)"/>
+                  News, Politics & Law
+                </p></label
+              >
+            </div>
+            <div class="column">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(personalFinance)"/>
+                  Personal Finance
+                </p></label
+              >
+            </div>
+          </div>
+          <div class="columns mt-5">
+            <div class="column">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-1" onclick="logger(realEstate)"/>
+                  Real Estate
+                </p></label
+              >
+            </div>
+            <div class="column">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(retail)"/>
+                  Retail
+                </p></label
+              >
+            </div>
+            <div class="column">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(styleFashion)"/>
+                  Style & Fashion
+                </p></label
+              >
+            </div>
+            <div class="column">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(techComputing)"/>
+                  Tech & Computing
+                </p></label
+              >
+            </div>
+          </div>
+          <div class="columns mt-5">
+            <div class="column is-3">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-1" onclick="logger(travel)"/>
+                  Travel
+                </p></label
+              >
+            </div>
+            <div class="column is-3">
+              <label
+                ><p class="notification industry has-text-centered has-text-grey-lighter">
+                  <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(other)"/>
+                  Other
+                </p></label
+              >
+            </div>
+          </div>
+          <div class="columns mt-5 mb-5">
+            <div class="column is-2" onclick="generateHTML()">
+              <p class="notification next has-text-centered">Next <i class="fas fa-arrow-right"></i></p>
+            </div>
+          </div>
+      </div>
 
-      <div class="is-size-4 has-text-centered has-text-grey-light has-text-weight-bold">What is your industry?</div>
-      <div class="columns mt-5">
-        <div class="column">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-1" onclick="logger(artsEnt)" />
-              Arts & Entertainment
-            </p></label
-          >
-        </div>
-        <div class="column">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(autoSports)"/>
-              Automotive & Sports
-            </p></label
-          >
-        </div>
-        <div class="column">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(businessCar)"/>
-              Business & <br />
-              Careers
-            </p></label
-          >
-        </div>
-        <div class="column">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(famParentingSoc)"/>
-              Family, Parenting & Society
-            </p></label
-          >
-        </div>
-      </div>
-      <div class="columns mt-5">
-        <div class="column">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-1" onclick="logger(healthFitnessFood)"/>
-              Health Fitness & Food
-            </p></label
-          >
-        </div>
-        <div class="column">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-2" onclick="logger(homeGardenPetsHobbies)"/>
-              Home/Garden, Pets & Hobbies
-            </p></label
-          >
-        </div>
-        <div class="column">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-2" />
-              News, Politics & Law
-            </p></label
-          >
-        </div>
-        <div class="column">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-2" />
-              Personal Finance
-            </p></label
-          >
-        </div>
-      </div>
-      <div class="columns mt-5">
-        <div class="column">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-1" />
-              Real Estate
-            </p></label
-          >
-        </div>
-        <div class="column">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-2" />
-              Retail
-            </p></label
-          >
-        </div>
-        <div class="column">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-2" />
-              Style & Fashion
-            </p></label
-          >
-        </div>
-        <div class="column">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-2" />
-              Tech & Computing
-            </p></label
-          >
-        </div>
-      </div>
-      <div class="columns mt-5">
-        <div class="column is-3">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-1" />
-              Travel
-            </p></label
-          >
-        </div>
-        <div class="column is-3">
-          <label
-            ><p class="notification industry has-text-centered has-text-grey-light">
-              <input type="radio" name="choices" value="artsEnt" class="mr-2" />
-              Other
-            </p></label
-          >
-        </div>
-      </div>
-      <div class="columns mt-5 mb-5">
-        <div class="column is-2">
-          <p class="notification next has-text-centered">Next <i class="fas fa-arrow-right"></i></p>
-        </div>
-      </div>
+      <!-- generate -->
     </div>
   </body>
 </html>
